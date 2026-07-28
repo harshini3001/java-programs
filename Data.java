@@ -1,7 +1,7 @@
-class Main{
+class Data{
 public static void main(String args[]){
 int x = 5;
-float y = 1.5;
+float y = 1.5f;
 char z = "K";
 long a = 2000;
 byte b = 90;
