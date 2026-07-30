@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class binarytodecimal{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int binary = sc.nextInt();
+        System.out.print(binarytodecimal(binary));
+    }
+    static int binarytodecimal(int binary){
+        int decimal = 0;
+        int place = 1;
+        while(binary>0){
+            int r = binary%10;
+            decimal = decimal+r*place;
+            place = place*2;
+            binary = binary/10;
+        }
+        return decimal;
+    }
+}
