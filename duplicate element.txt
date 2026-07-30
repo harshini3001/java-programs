@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+
+            for (int j = 0; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+
+            // Avoid printing same duplicate multiple times
+            if (count > 1) {
+                boolean alreadyPrinted = false;
+
+                for (int k = 0; k < i; k++) {
+                    if (arr[k] == arr[i]) {
+                        alreadyPrinted = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyPrinted) {
+                    System.out.print(arr[i] + " ");
+                }
+            }
+        }
+    }
+}
