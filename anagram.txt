@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner x=new Scanner(System.in);
+        String s1=x.nextLine();
+        String s2=x.nextLine();
+        anagram(s1,s2);
+    }
+    public static void anagram(String s1,String s2){
+        if(s1.length()!=s2.length()){
+            System.out.print("Not Anagram");
+            return;
+        }
+        int freq[]=new int[256];
+        for(int i=0;i<s1.length();i++){
+            int ascii1=s1.charAt(i);
+            int ascii2=s2.charAt(i);
+            freq[ascii1]++;
+            freq[ascii2]--;
+            
+        }
+        for(int i=0;i<256;i++){
+            if(freq[i]!=0){
+                System.out.print("Not Anagram");
+                return;
+            }
+        }
+        System.out.print("Anagram");
+    }
+}

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String args[]) {
+        Scanner x = new Scanner(System.in);
+
+        String s1 = x.nextLine();
+        String s2 = x.nextLine();
+        int index = x.nextInt();
+
+        insert(s1, s2, index);
+    }
+
+    static void insert(String s1, String s2, int index) {
+
+        for (int i = 0; i < index; i++) {
+            System.out.print(s1.charAt(i));
+        }
+
+        System.out.print(s2);
+
+        for (int i = index; i < s1.length(); i++) {
+            System.out.print(s1.charAt(i));
+        }
+    }
+}
